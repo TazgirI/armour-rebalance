@@ -5,6 +5,8 @@
   "refmap": "",
   "target": "@env(DEFAULT)",
   "mixins": [
-    "CombatRulesMixin"
+    "LivingEntityInterface",
+    "LivingEntityMixin",
+    "PlayerMixin"
   ]
 }

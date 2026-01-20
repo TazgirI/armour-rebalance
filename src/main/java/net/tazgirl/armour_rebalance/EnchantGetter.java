@@ -15,14 +15,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class EnchantGetter
 {
     // Attempted to copy how vanilla does it, runs mainly on crossed fingers
-    public static float getProtectionLevels(LivingEntity entity, Map<ResourceKey<Enchantment>, Float> protectionEnchantments)
+    public static double getProtectionLevels(LivingEntity entity, Map<ResourceKey<Enchantment>, Double> protectionEnchantments)
     {
         MutableFloat mutableFloat = new MutableFloat();
         EnchantmentHelper.runIterationOnEquipment(entity, (holder, slot, ctx) -> {
-            Float f = protectionEnchantments.get(holder.getKey());
-            if(f != null)
+            Double d = protectionEnchantments.get(holder.getKey());
+            if(d != null)
             {
-                mutableFloat.addAndGet(ctx.itemStack().getEnchantmentLevel(holder) * f);
+                mutableFloat.addAndGet(ctx.itemStack().getEnchantmentLevel(holder) * d);
             }
         });
 
