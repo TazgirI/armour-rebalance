@@ -17,4 +17,7 @@ public class Constants
     public static double raraw = 15;
     public static double rtperc = 10;
     public static double rtraw = 3;
+
+
+    public static boolean wardenPatch = false;
 }

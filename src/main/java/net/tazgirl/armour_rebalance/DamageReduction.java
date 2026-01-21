@@ -68,15 +68,15 @@ public class  DamageReduction
             }
         }
 
-        // WARN: COMMENT BEFORE BUILD
-        if(entity instanceof Player || damageSource.getEntity() instanceof Player)
-        {
-            System.out.println("Incoming damage: " + damage + "  " + findDefenceType(damageSource) + "  " + armour + "  " + toughness + "\n" +
-                    "Out: " + fullReducedDamage);
-            System.out.println("Full reduction: " + fullReduction + "All buckets added together: " + ((fullReduction * bucketContributions.armour()) + (fullReduction * bucketContributions.protection()) + (fullReduction * bucketContributions.resistance())));
-
-            System.out.println("Prot levels: " + findDefenceType(damageSource).getLevels(entity));
-        }
+        // BEFOREBUILD: COMMENT
+//        if(entity instanceof Player || damageSource.getEntity() instanceof Player)
+//        {
+//            System.out.println("Incoming damage: " + damage + "  " + findDefenceType(damageSource) + "  " + armour + "  " + toughness + "\n" +
+//                    "Out: " + fullReducedDamage);
+//            System.out.println("Full reduction: " + fullReduction + "All buckets added together: " + ((fullReduction * bucketContributions.armour()) + (fullReduction * bucketContributions.protection()) + (fullReduction * bucketContributions.resistance())));
+//
+//            System.out.println("Prot levels: " + findDefenceType(damageSource).getLevels(entity));
+//        }
 
         return (float)(damage - totalAppliedReduction);
     }

@@ -63,6 +63,9 @@ public class Config {
             .comment("See above")
             .define("rtraw", 3.0, (d -> d instanceof Double && (double) d > 0));
 
+    public static final ModConfigSpec.BooleanValue WARDEN_PATCH = BUILDER
+            .comment("Wardens have a uniquely high melee damage for a vanilla mob so this allows maxed out diamond or netherite to not get one-shot. I highly recommend disabling this if there are any ways in the modpack to get your armour/prot levels/health/toughness above vanilla levels")
+            .define("wardenPatch", true);
 
 
     public static void SyncConfigValues()
@@ -81,6 +84,9 @@ public class Config {
         Constants.raraw = RESISTANCE_RAW_ARMOUR_BONUS.get();
         Constants.rtperc = RESISTANCE_PERCENT_TOUGHNESS_BONUS.get();
         Constants.rtraw = RESISTANCE_RAW_TOUGHNESS_BONUS.get();
+
+        Constants.wardenPatch = WARDEN_PATCH.getAsBoolean();
+
     }
 
     static final ModConfigSpec SPEC = BUILDER.build();
@@ -96,7 +102,6 @@ public class Config {
     {
         SyncConfigValues();
     }
-
 
 //    // a list of strings that are treated as resource locations for items
 //    public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
