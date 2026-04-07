@@ -83,7 +83,7 @@ public abstract class LivingEntityMixin
         DamageContainer damageContainer = damageContainers.peek();
         LivingEntity me = (LivingEntity)(Object) this;
 
-        DamageReduction.applyFullReduction(damageContainer, me, damageSource, damageAmount, (float) me.getAttributeValue(Attributes.ARMOR),(float) me.getAttributeValue(Attributes.ARMOR_TOUGHNESS), true, true, true, true);
+        DamageReduction.applyFullReduction(damageContainer, me, damageSource, damageAmount, me.getAttributeValue(Attributes.ARMOR),me.getAttributeValue(Attributes.ARMOR_TOUGHNESS), true, true, true, true);
     }
 }
 
